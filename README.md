@@ -66,7 +66,48 @@ El ressultado de suma 10 + 20 es igual a 30
 
 
 ```   
-- Con el comando ``` %save "nombre del archivo.py" "lineas que queremos almacenar"```
+- Con el comando ``` %save "nombre del archivo.py" "lineas que queremos almacenar"``` podemos almacenar líneas de código en un archivo. 
 
 ejemplo: 
+   ```%save demo.py 1-9```
 
+
+- Para almacenar nuevas lineas de código dentro de un archivo se utiliza el comando ```%save -a "nombre del archivo" "líneas a almacenar"```
+
+ejemplo: 
+```%save demo.py 12-18```
+
+Utilizando un guión podemos agregar las líneas de código que estan en ese rango, pero si queremos no agregar algunas lineas especificas, podemos utlizarlo con un espacio
+ejemplo:
+```%save demo.py 12 14 ```
+Así almacenará las líneas 12 y 14 solamente 
+
+## Numpy 
+
+Podemos crear arreglos de objetos iterables utilizando array 
+
+```
+import numpy as np 
+
+lista = [1,2,3,4]
+
+np.array(lista)
+
+out: array([lista])
+
+```
+
+### Atributos 
+
+* Dimesiones
+Para saber la cantidad de dimensiones que tiene un arreglo podemos utilizar el 
+atributo de ``` lista.ndim```
+
+* Cantidad de objetos que posee el arreglo
+Se puede ver con usando ``` lista.size```
+
+* Tamaño en bytes de cada elemento dentro del arreglo
+Usando: ``` lista.itemsize```
+
+* Conocer la forma del arreglo
+Utilizando: ``` lista.shape```
