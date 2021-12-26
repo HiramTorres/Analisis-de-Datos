@@ -185,7 +185,7 @@ array([15, 81, 59, 77, 53, 30, 84, 31, 57, 79, 69, 33, 34, 82, 27, 76, 94,
 
 ```
 
-Para visualizar los datos dentro de una arreglo podemos llamarlos atravez de llaves de esta forma: 
+Para visualizar los datos dentro de una arreglo podemos llamarlos a través de llaves de esta forma: 
 ```
 In [18]: datos = np.random.randint(0,10,5)
 
@@ -206,4 +206,85 @@ In [23]: datos[1]=100
 In [24]: datos
 Out[24]: array([  2, 100,   8,   2,   9])
 ```
+
+### Subarreglos
+Se pueden generar subarreglos de los ya establecidos, y estos tomandolos como las listas en python, el primer argumento va el inicio el segundo el final y el tercero la cantidad de saltos que gustemos de ```n[inicio:fin:saltos]``` todo separado con doble punto ejemplo:
+```
+In [25]: n = np.random.randint(0,20,20)
+
+In [26]: n
+Out[26]:
+array([ 7, 12,  1, 10,  7,  3, 13, 14, 11,  1,  1, 17,  0,  9, 13, 13,  0,
+        8,  6,  0])
+In [28]: n[3:10:2]
+Out[28]: array([10,  3, 14,  1])
+
+```
+
+Para obtener un subarreglo solo con ciertos indices seleccionados, se puede obtener con: 
+```
+In [29]: n
+Out[29]:
+array([ 7, 12,  1, 10,  7,  3, 13, 14, 11,  1,  1, 17,  0,  9, 13, 13,  0,
+        8,  6,  0])
+
+In [30]: n[[0,1,3,7]]
+Out[30]: array([ 7, 12, 10, 14])
+```
+Otra forma en la cual se pueden obtener es con lista de tipo booleno. Ejemplo: 
+```
+In [33]: n = np.random.randint(0,100,7)
+
+In [34]: n
+Out[34]: array([53, 42, 10, 67, 70, 98, 59])
+
+In [35]: n[[True,False,False,True,False,True,True]]
+Out[35]: array([53, 67, 98, 59])
+```
+Tomando en cuenta que la longitud del arreglo en booleano de ser igual a la longitud del arreglo n 
+
+---
+
+## Vectorizar funciones 
+
+Para vectorizar una función lo que debemos de hacer es: 
+```
+In [42]: def operacion(valor):
+    ...:     return (valor**2)+2
+    ...:
+
+In [43]: for valor in n:
+    ...:     print(operacion(valor))
+    ...:
+2811
+1766
+102
+4491
+4902
+9606
+3483
+```
+
+Una vez obtenida la lista de la funcion la cual queremos vectorizar 
+```
+In [44]: vector = np.vectorize(operacion)
+
+In [45]: vector
+Out[45]: <numpy.vectorize at 0x1fa0960e370>
+
+In [46]: vector(n)
+Out[46]: array([2811, 1766,  102, 4491, 4902, 9606, 3483])
+```
+
+> Se puede tambien utilizar la funcioón ```lambda``` que sonLas expresiones lambda se usan idealmente cuando necesitamos hacer algo simple y estamos más interesados en hacer el trabajo rápidamente en lugar de nombrar formalmente la función. Las expresiones lambda también se conocen como funciones anónimas.
+Las expresiones lambda en Python son una forma corta de declarar funciones pequeñas y anónimas (no es necesario proporcionar un nombre para las funciones lambda).
+```
+In [48]: square = lambda x: x**2
+
+In [49]: square(2)
+Out[49]: 4
+```
+---
+## Copias y vistas 
+
 
