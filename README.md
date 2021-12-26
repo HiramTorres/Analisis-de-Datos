@@ -174,7 +174,7 @@ In [13]: np.ones(20,dtype=int)
 Out[13]: array([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1])
 ```
 
-Podemos generar un arreglo de n cantidad de numero aleatorios con la función: ```np.random.randint(n,n-1,p) donde n y n-1 son los limites de donde se tomaran los numeros y p es la longitud maxima que soporta dicho arreglo 
+Podemos generar un arreglo de n cantidad de numero aleatorios con la función: ```np.random.randint(n,n-1,p)``` donde n y n-1 son los limites de donde se tomaran los numeros y p es la longitud maxima que soporta dicho arreglo 
 ejemplo: 
 ```
 n [14]: np.random.randint(0,101,50)
