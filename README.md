@@ -2,7 +2,11 @@
 
 ### _Para este curso se utlizan varias librerias como numpy y pandas ademas de que se trabaja desde ipython_ 
 
-Se inicializa un entorno con el comando de ```python -m venv "nombre del archivo"```
+Se inicializa un entorno con el comando de
+ ```python -m venv "nombre del archivo"```
+
+y se activa el entorno con el comando 
+```env\scripts\activate```
 
 ## Comandos magicos 
 
