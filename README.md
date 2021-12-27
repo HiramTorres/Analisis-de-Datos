@@ -285,6 +285,119 @@ In [49]: square(2)
 Out[49]: 4
 ```
 ---
-## Copias y vistas 
+
+## Matrices
+
+Las matrices son creadas con arreglos de *numpy* y son listas con listas por ejemplo: 
+```
+A = np.array([
+[1,2,3,4,5],
+[10,20,30,40,50],
+[100,200,300,400,500]
+])
+
+In [10]: A
+Out[10]:
+array([[  1,   2,   3,   4,   5],
+       [ 10,  20,  30,  40,  50],
+       [100, 200, 300, 400, 500]])
+```
+Para saber las dimensiones que tiene un arreglo, podemos hacer uso del atributo ```.ndim```
+por ejemplo: 
+```
+In [11]: A.ndim
+Out[11]: 2
+```
+y el atributo ```.shape``` 
+```
+In [12]: A.shape
+Out[12]: (3, 5)
+```
+> El axi0 = Filas 
+El axi1 = Columnas
+
+Por ejemplo: 
+``` 
+In [13]: A
+Out[13]:
+array([[  1,   2,   3,   4,   5],
+       [ 10,  20,  30,  40,  50],
+       [100, 200, 300, 400, 500]])
 
 
+In [14]: A[0][0] # Axi0 = 0 y axi1 = 0
+Out[13]: 1
+
+In [15]: A[1][2] # Axi0 = 1 y Axi1 = 2
+Out[15]: 30
+
+``` 
+Asi podemos obtener elementos de la matriz , aunque también hay otra forma: ```A[axi0,axi1]```
+```
+In [16]: A[1,2]
+Out[16]: 30
+
+In [17]: A[2,4]
+Out[17]: 500
+```
+Para pbtener subconjuntos de las matrices se puede utilizando la forma: 
+```
+In [18]: A[1,:4]
+Out[18]: array([10, 20, 30, 40])
+
+In [19]: A[:2,2:]
+Out[19]:
+array([[ 3,  4,  5],
+       [30, 40, 50]])
+```
+También se pueden seleccionar valores en especifico por ejemplo: 
+```
+In [21]: A
+Out[21]:
+array([[  1,   2,   3,   4,   5],
+       [ 10,  20,  30,  40,  50],
+       [100, 200, 300, 400, 500]])
+
+In [22]: A[1,[2,4]] # Sacar solo ciertos valores especificos 
+Out[22]: array([30, 50])
+```
+
+## Métodos de agregación 
+
+ Con el método ```.std()``` podemos obtener la desviación estandar del arreglo
+ ```
+In [23]: A.std()
+Out[23]: 157.21323099535866
+ ```
+
+Otro método es ```.sum()```con el cual podemos saber la suma de todo el arreglo 
+```
+In [24]: A.sum()
+Out[24]: 1665
+```
+Conocer también el valor ```.min()```o el valor ```.max()```
+```
+In [25]: A.min()
+Out[25]: 1
+
+In [26]: A.max()
+Out[26]: 500
+```
+Para saber el primerdio ```.mean()```
+```
+In [27]: A.mean()
+Out[27]: 111.0
+```
+
+## Transponer las matrices 
+
+Solo utilizando esta forma ```.T```
+```
+In [28]: A.T
+Out[28]:
+array([[  1,  10, 100],
+       [  2,  20, 200],
+       [  3,  30, 300],
+       [  4,  40, 400],
+       [  5,  50, 500]])
+```
