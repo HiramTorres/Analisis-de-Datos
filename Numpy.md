@@ -160,7 +160,7 @@ In [46]: vector(n)
 Out[46]: array([2811, 1766,  102, 4491, 4902, 9606, 3483])
 ```
 
-> Se puede tambien utilizar la funcioón ```lambda``` que sonLas expresiones lambda se usan idealmente cuando necesitamos hacer algo simple y estamos más interesados en hacer el trabajo rápidamente en lugar de nombrar formalmente la función. Las expresiones lambda también se conocen como funciones anónimas.
+> Se puede tambien utilizar la función ```lambda```.Las expresiones lambda se usan idealmente cuando necesitamos hacer algo simple y estamos más interesados en hacer el trabajo rápidamente en lugar de nombrar formalmente la función. Las expresiones lambda también se conocen como funciones anónimas.
 Las expresiones lambda en Python son una forma corta de declarar funciones pequeñas y anónimas (no es necesario proporcionar un nombre para las funciones lambda).
 ```
 In [48]: square = lambda x: x**2
